@@ -1,0 +1,26 @@
+#dream{
+    width: 250px;
+    height: 250px;
+}
+
+#mainMenu{
+    color: #2a09a0dc;
+    font-weight: bolder;
+}
+
+.space{
+    margin-bottom: 25px;
+}
+
+.center{
+    margin-left: 25px;
+}
+/* 
+.navSurvey{    
+    padding-top: 30px;
+    padding-bottom: 30px;
+} */
+
+.surveyInfo{
+    width: 180px;
+}
