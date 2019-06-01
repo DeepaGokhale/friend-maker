@@ -20,6 +20,8 @@ var tinderImages = ['https://static.fusionmovies.to/images/character/qSeRxGGeYQO
                     'https://i.pinimg.com/originals/1d/c7/3f/1dc73fef3322b23e4d1105c517459510.jpg'
                 ];
 
+                
+
 addOrigPeople();
 
 function addOrigPeople(){

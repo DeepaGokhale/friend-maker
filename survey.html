@@ -230,7 +230,7 @@
                     newTinder = new TinderPeople(name, photo, ansArr);
                     tinders.push(newTinder);
                     console.log(newTinder);
-                    matchMaker();
+                    matchMaker(ansArr);
                 }        
  
                 // document.getElementById("myDialog").showModal(); 
@@ -313,6 +313,7 @@
                 alert("question11 must be selected");
                 return false;
             }
+            return isValid;
         }
 
         function matchMaker(scores)
@@ -321,22 +322,44 @@
             //save the match and check next to see if that matches better
             //if it does then pop the first saved item and take the new one
             //once found the best possible match -show the modal dialogue
-            $("#matchImg").attr( 'src', 'https://atlantablackstar.com/wp-content/uploads/2012/12/michael-richards.jpg');
-            $('#matchName').text('Deepa');
-            // var match = [];
-            // var tenderTinder =  newTinder.scores;            
 
-            // for (i=0; i < tenderTinder.length; i++)
-            // {
-            //     for (x=0; x < tinders.length; x++)
-            //     {
-            //         var curTinder = tinders[x].scores;
-            //         for(s=0; s < curTinder.length; s++)
-            //         {
+            var match = [];
+            var tenderTinder = scores;            
+            var perfectMatch = [];
+            latestScore = 0;
 
-            //         }
-            //     }
+            for (x=0; x < tinders.length; x++)
+            {
+                var curTinder = tinders[x].scores;
+                var matchScore = 0; 
+                for (i=0; i < tenderTinder.length; i++)
+                {
+                    var calc = curTinder[i] - tenderTinder[i];
+                    calc = Math.abs(calc);
+                    matchScore = matchScore + calc;
+
+                    if(perfectMatch.length == 0)
+                    {
+                       perfectMatch.push(tinders[x]);
+                       latestScore = matchScore;
+                    }
+                    else
+                    {
+                        if(latestScore > matchScore) //this new tinder is a better match
+                        {
+                            perfectMatch.pop(); //remove the last match to add this better one - this array has only 1 item always
+                            perfectMatch.push(tinders[x]);
+                            console.log(tinders[x]);
+                            latestScore = matchScore;
+                        }
+                    }
+                }
             }
+
+            //once you go through them all you know the best match
+            $("#matchImg").attr( 'src', perfectMatch[0].photo);
+            $('#matchName').text(perfectMatch[0].name);
+        }
 
             
 // <script>
