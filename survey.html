@@ -208,6 +208,7 @@
             var newTinder;
 
             $(document).on('click', '#submitAns' , function(){
+                //validate
                 var isValid = validateAns();                
                 if(isValid)
                 {
@@ -226,26 +227,19 @@
                     ansArr.push($("#question9").val());
                     ansArr.push($("#question10").val());
                     ansArr.push($("#question11").val());
-
+                    //add the new tinder to the array
                     newTinder = new TinderPeople(name, photo, ansArr);
                     tinders.push(newTinder);
                     console.log(newTinder);
+                    //check the match
                     matchMaker(ansArr);
                 }        
- 
-                // document.getElementById("myDialog").showModal(); 
             })
-
-            // $("#submitAns").click(function(){
-            //         console.log("Hre");
-            //         $("#myModal").show(function(){
-
-            //         });
-            //     });
         })
 
         function validateAns()
         {
+            //form validation
             var isValid = true;
             var name = $("#username").val();
             if (name == "") {
@@ -360,13 +354,6 @@
             $("#matchImg").attr( 'src', perfectMatch[0].photo);
             $('#matchName').text(perfectMatch[0].name);
         }
-
-            
-// <script>
-// function myFunction() { 
-//   
-// } 
-//         }
 //     </script>
 </body>
 </html>
