@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">    
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+
+    <!-- 
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">   -->
+    
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron d-flex justify-content-center rounded navSurvey">
+            <div class="col col-lg-3">
+                <img class="rounded" id="dream" src="/images/rainbow-dream-catcher-urn-super-sale-4d1.jpg">
+            </div>            
+            <div class="col col-lg-9 center">
+                <h1 id="mainMenu">Friend Catcher!</h1>
+                <h2 class="main">Answer following questions:</h2>
+                <hr>
+                <h5>Enter your Information:</h5>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="surveyInfo input-group-text">Your Name:</span>
+                    </div>
+                    <input type="text" class="form-control ansChoice" id="username" name="username">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="surveyInfo input-group-text">Link to Photo Image:</span>
+                    </div>
+                    <input type="text" class="form-control ansChoice" id="photoImg" name="photoImg">
+                </div>
+            </div>
+        </div>
+        <!-- Actual survey -->
+        <div > 
+            <p>
+                <h5><li>I stop to smell the flowers</li></h5>
+                <label for="question1">Choose an option</label>
+                <select class="form-control ansChoice" id="question1">
+                    <option value></option>
+                    <option>1-Strongly disagree</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5-Strongly Agree</option>
+                </select>
+
+                <h5><li>I forget my surroundings when I play video games</li></h5>
+                <label for="question2">Choose an option</label>
+                <select class="form-control ansChoice" id="question2">
+                    <option value></option>
+                    <option>1-Strongly disagree</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5-Strongly Agree</option>
+                </select>
+
+                <h5><li>Watching rain/snowfall is very peaceful</li></h5>
+                <label for="question3">Choose an option</label>
+                <select class="form-control ansChoice" id="question3">
+                    <option value></option>
+                    <option>1-Strongly disagree</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5-Strongly Agree</option>
+                </select>
+
+                <h5><li>I prefer my screens over people</li></h5>
+                <label for="question4">Choose an option</label>
+                <select class="form-control ansChoice" id="question4">
+                    <option value></option>
+                    <option>1-Strongly disagree</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5-Strongly Agree</option>
+                </select>
+
+                <h5><li>I get excited for the spring blooms and April showers</li></h5>
+                <label for="question5">Choose an option</label>
+                <select class="form-control ansChoice" id="question5">
+                    <option value></option>
+                    <option>1-Strongly disagree</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5-Strongly Agree</option>
+                </select>
+
+                <h5><li>I can not stand classical music</li></h5>
+                <label for="question6">Choose an option</label>
+                <select class="form-control ansChoice" id="question6">
+                    <option value></option>
+                    <option>1-Strongly disagree</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5-Strongly Agree</option>
+                </select>
+
+                <h5><li>I do not care about politics! It's waste of time</li></h5>
+                <label for="question7">Choose an option</label>
+                <select class="form-control ansChoice" id="question7">
+                    <option value></option>
+                    <option>1-Strongly disagree</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5-Strongly Agree</option>
+                </select>
+
+                <h5><li>In life 80% is luck and 20% is hardwork</li></h5>
+                <label for="question8">Choose an option</label>
+                <select class="form-control ansChoice" id="question8">
+                    <option value></option>
+                    <option>1-Strongly disagree</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5-Strongly Agree</option>
+                </select>
+
+                <h5><li>Food is for survival not to savor</li></h5>
+                <label for="question9">Choose an option</label>
+                <select class="form-control ansChoice" id="question9">
+                    <option value></option>
+                    <option>1-Strongly disagree</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5-Strongly Agree</option>
+                </select>
+
+                <h5><li>Silly jokes make me laugh out loud</li></h5>
+                <label for="question10">Choose an option</label>
+                <select class="form-control ansChoice" id="question10">
+                    <option value></option>
+                    <option>1-Strongly disagree</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5-Strongly Agree</option>
+                </select>
+
+                <h5><li>I would leave everything to help a friend</li></h5>
+                <label for="question11">Choose an option</label>
+                <select class="form-control ansChoice" id="question11">
+                    <option value></option>                    
+                    <option>1-Strongly disagree</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5-Strongly Agree</option>
+                </select>
+
+                <p>
+                    <button type="button" id="submitAns" class="btn btn-lg btn-outline-dark" data-toggle="modal" data-target="#myModal">Submit Answers</button>
+                    <!-- <input type="button" id="submitAns" value="Submit Answers" class="btn btn-lg btn-outline-dark"> -->
+                </p>
+            </p>
+        </div>
+    </div>    
+      <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">We got a match!</h4>
+          </div>
+          <div class="modal-body">   
+              <div class="row">
+                    <div class="col col-md-5">
+                        <img id="matchImg" class="tinderImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTArQ3nObmwgcRLvcazsha0t_t1i48b6uE6yIQX2SE4aGuNKVT">
+                    </div>      
+                    <div class="col col-md-5">
+                        <p><bold><h3 id="matchName">Somya Bin Timmya</h3></bold></p> 
+                    </div>  
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <script src="/javascript/friends.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){          
+            
+            var newTinder;
+
+            $(document).on('click', '#submitAns' , function(){
+                var isValid = validateAns();
+                if(isValid)
+                {
+                    var name = $("#username").val();
+                    var photo = $("#photoImg").val();
+                    var ansArr = [];
+
+                    ansArr.push($("#question1").val());
+                    ansArr.push($("#question2").val());
+                    ansArr.push($("#question3").val());
+                    ansArr.push($("#question4").val());
+                    ansArr.push($("#question5").val());
+                    ansArr.push($("#question6").val());
+                    ansArr.push($("#question7").val());
+                    ansArr.push($("#question8").val());
+                    ansArr.push($("#question9").val());
+                    ansArr.push($("#question10").val());
+                    ansArr.push($("#question11").val());
+
+                    newTinder = new TinderPeople(name, photo, ansArr);
+                    tinders.push(newTinder);
+                    console.log(newTinder);
+                    matchMaker();
+                }               
+                // document.getElementById("myDialog").showModal(); 
+            })
+
+            // $("#submitAns").click(function(){
+            //         console.log("Hre");
+            //         $("#myModal").show(function(){
+
+            //         });
+            //     });
+        })
+
+        function validateAns()
+        {
+            var isValid = true;
+            var name = $("#username").val();
+            if (name == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            //did not have time otherwise going to validate if this is actual link
+            var name = $("#photoImg").val();
+            if (name == "") {
+                alert("Link must be filled out");
+                return false;
+            }
+            var question1 = $("#question1").val();
+            if (question1 == "") {
+                alert("question1 must be selected");
+                return false;
+            }
+            var question2 = $("#question2").val();
+            if (question2 == "") {
+                alert("question2 must be selected");
+                return false;
+            }
+            var question3 = $("#question3").val();
+            if (question3 == "") {
+                alert("question3 must be selected");
+                return false;
+            }
+            var question4 = $("#question4").val();
+            if (question4 == "") {
+                alert("question4 must be selected");
+                return false;
+            }
+            var question5 = $("#question5").val();
+            if (question5 == "") {
+                alert("question5 must be selected");
+                return false;
+            }
+            var question6 = $("#question6").val();
+            if (question6 == "") {
+                alert("question6 must be selected");
+                return false;
+            }
+            var question7 = $("#question7").val();
+            if (question7 == "") {
+                alert("question7 must be selected");
+                return false;
+            }
+            var question8 = $("#question8").val();
+            if (question8 == "") {
+                alert("question8 must be selected");
+                return false;
+            }
+            var question9 = $("#question9").val();
+            if (question9 == "") {
+                alert("question9 must be selected");
+                return false;
+            }
+            var question10 = $("#question10").val();
+            if (question10 == "") {
+                alert("question10 must be selected");
+                return false;
+            }
+            var question11 = $("#question11").val();
+            if (question11 == "") {
+                alert("question11 must be selected");
+                return false;
+            }
+        }
+
+        function matchMaker(scores)
+        {
+            //for given arr check what matches and the score
+            //save the match and check next to see if that matches better
+            //if it does then pop the first saved item and take the new one
+            //once found the best possible match -show the modal dialogue
+            $("#matchImg").attr( 'src', 'https://atlantablackstar.com/wp-content/uploads/2012/12/michael-richards.jpg');
+            $('#matchName').text('Deepa');
+            // var match = [];
+            // var tenderTinder =  newTinder.scores;            
+
+            // for (i=0; i < tenderTinder.length; i++)
+            // {
+            //     for (x=0; x < tinders.length; x++)
+            //     {
+            //         var curTinder = tinders[x].scores;
+            //         for(s=0; s < curTinder.length; s++)
+            //         {
+
+            //         }
+            //     }
+            }
+
+            
+// <script>
+// function myFunction() { 
+//   
+// } 
+//         }
+//     </script>
+</body>
+</html>
