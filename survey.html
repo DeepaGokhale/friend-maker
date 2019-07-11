@@ -230,131 +230,27 @@
                     ansArr.push($("#question11").val());
                     //add the new tinder to the array
                     newTinder = new TinderPeople(name, photo, ansArr);
-                    tinders.push(newTinder);
-                    console.log(newTinder);
-                    //check the match
+                    // tinders.push(newTinder);
+                   
+                    // AJAX post the data to the friends API.
+                    $.post("/api/friends", newTinder, function(data) {
+
+                        // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                        $("#match-name").text(data.name);
+                        $("#match-img").attr("src", data.photo);
+
+                        // Show the modal with the best match
+                        $("#results-modal").modal("toggle");
+
+                    })
+                    console.log('the people are: ' , newTinder);
+                //     //check the match
                     matchMaker(ansArr);
-                }        
+                // }      
+                }  
             })
         })
 
-        function validateAns()
-        {
-            //form validation
-            var isValid = true;
-            var name = $("#username").val();
-            if (name == "") {
-                alert("Name must be filled out");
-                return false;
-            }
-            //did not have time otherwise going to validate if this is actual link
-            var name = $("#photoImg").val();
-            if (name == "") {
-                alert("Link must be filled out");
-                return false;
-            }
-            var question1 = $("#question1").val();
-            if (question1 == "") {
-                alert("question1 must be selected");
-                return false;
-            }
-            var question2 = $("#question2").val();
-            if (question2 == "") {
-                alert("question2 must be selected");
-                return false;
-            }
-            var question3 = $("#question3").val();
-            if (question3 == "") {
-                alert("question3 must be selected");
-                return false;
-            }
-            var question4 = $("#question4").val();
-            if (question4 == "") {
-                alert("question4 must be selected");
-                return false;
-            }
-            var question5 = $("#question5").val();
-            if (question5 == "") {
-                alert("question5 must be selected");
-                return false;
-            }
-            var question6 = $("#question6").val();
-            if (question6 == "") {
-                alert("question6 must be selected");
-                return false;
-            }
-            var question7 = $("#question7").val();
-            if (question7 == "") {
-                alert("question7 must be selected");
-                return false;
-            }
-            var question8 = $("#question8").val();
-            if (question8 == "") {
-                alert("question8 must be selected");
-                return false;
-            }
-            var question9 = $("#question9").val();
-            if (question9 == "") {
-                alert("question9 must be selected");
-                return false;
-            }
-            var question10 = $("#question10").val();
-            if (question10 == "") {
-                alert("question10 must be selected");
-                return false;
-            }
-            var question11 = $("#question11").val();
-            if (question11 == "") {
-                alert("question11 must be selected");
-                return false;
-            }
-            return isValid;
-        }
-
-        function matchMaker(scores)
-        {
-            //for given arr check what matches and the score
-            //save the match and check next to see if that matches better
-            //if it does then pop the first saved item and take the new one
-            //once found the best possible match -show the modal dialogue
-
-            var match = [];
-            var tenderTinder = scores;            
-            var perfectMatch = [];
-            latestScore = 0;
-
-            for (x=0; x < tinders.length; x++)
-            {
-                var curTinder = tinders[x].scores;
-                var matchScore = 0; 
-                for (i=0; i < tenderTinder.length; i++)
-                {
-                    var calc = curTinder[i] - tenderTinder[i];
-                    calc = Math.abs(calc);
-                    matchScore = matchScore + calc;
-
-                    if(perfectMatch.length == 0)
-                    {
-                       perfectMatch.push(tinders[x]);
-                       latestScore = matchScore;
-                    }
-                    else
-                    {
-                        if(latestScore > matchScore) //this new tinder is a better match
-                        {
-                            perfectMatch.pop(); //remove the last match to add this better one - this array has only 1 item always
-                            perfectMatch.push(tinders[x]);
-                            console.log(tinders[x]);
-                            latestScore = matchScore;
-                        }
-                    }
-                }
-            }
-
-            //once you go through them all you know the best match
-            $("#matchImg").attr( 'src', perfectMatch[0].photo);
-            $('#matchName').text(perfectMatch[0].name);
-        }
 //     </script>
 </body>
 </html>

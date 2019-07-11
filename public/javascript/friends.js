@@ -20,6 +20,7 @@ var tinderImages = [
                     // 'https://i.pinimg.com/originals/1d/c7/3f/1dc73fef3322b23e4d1105c517459510.jpg'
                 ];
 
+
 function addOrigPeople(){
     //Load some mock data                
     var newFriend1 = new TinderPeople('Albert Pinto', 'https://www.seinfeldscripts.com/images/kramer.jpg', [4,2,5,5,3,3,4,2,2,4,2]);
@@ -44,7 +45,7 @@ function addOrigPeople(){
     tinders.push(newFriend10);
     var newFriend11 = new TinderPeople('Jamie Scary', 'https://i.pinimg.com/originals/1d/c7/3f/1dc73fef3322b23e4d1105c517459510.jpg', [3,2,5,1,3,3,4,2,1,4,4]);   
     tinders.push(newFriend11); 
-    console.log(tinder[5]);
+    console.log(tinders[5]);
 }
 
 addOrigPeople();
@@ -77,8 +78,126 @@ function displayFriends()
     {
         $("#friendsData").append(JSON.stringify(tinders[i]) + '<br>');
         // $("#friendsData").append(JSON.stringify(tinders[i].name + '<br>' + tinders[i].photo + '<br>' +  tinders[i].scores + '<br>'));
+    }    
+}
+
+
+function validateAns()
+{
+    //form validation
+    var isValid = true;
+    var name = $("#username").val();
+    if (name == "") {
+        alert("Name must be filled out");
+        return false;
     }
-    
+    //did not have time otherwise going to validate if this is actual link
+    var name = $("#photoImg").val();
+    if (name == "") {
+        alert("Link must be filled out");
+        return false;
+    }
+    var question1 = $("#question1").val();
+    if (question1 == "") {
+        alert("question1 must be selected");
+        return false;
+    }
+    var question2 = $("#question2").val();
+    if (question2 == "") {
+        alert("question2 must be selected");
+        return false;
+    }
+    var question3 = $("#question3").val();
+    if (question3 == "") {
+        alert("question3 must be selected");
+        return false;
+    }
+    var question4 = $("#question4").val();
+    if (question4 == "") {
+        alert("question4 must be selected");
+        return false;
+    }
+    var question5 = $("#question5").val();
+    if (question5 == "") {
+        alert("question5 must be selected");
+        return false;
+    }
+    var question6 = $("#question6").val();
+    if (question6 == "") {
+        alert("question6 must be selected");
+        return false;
+    }
+    var question7 = $("#question7").val();
+    if (question7 == "") {
+        alert("question7 must be selected");
+        return false;
+    }
+    var question8 = $("#question8").val();
+    if (question8 == "") {
+        alert("question8 must be selected");
+        return false;
+    }
+    var question9 = $("#question9").val();
+    if (question9 == "") {
+        alert("question9 must be selected");
+        return false;
+    }
+    var question10 = $("#question10").val();
+    if (question10 == "") {
+        alert("question10 must be selected");
+        return false;
+    }
+    var question11 = $("#question11").val();
+    if (question11 == "") {
+        alert("question11 must be selected");
+        return false;
+    }
+    return isValid;
+}
+
+function matchMaker(scores)
+{
+    //for given arr check what matches and the score
+    //save the match and check next to see if that matches better
+    //if it does then pop the first saved item and take the new one
+    //once found the best possible match -show the modal dialogue
+
+    var match = [];
+    var tenderTinder = scores;            
+    var perfectMatch = [];
+    latestScore = 0;
+
+    for (x=0; x < tinders.length; x++)
+    {
+        var curTinder = tinders[x].scores;
+        var matchScore = 0; 
+        for (i=0; i < tenderTinder.length; i++)
+        {
+            var calc = curTinder[i] - tenderTinder[i];
+            calc = Math.abs(calc);
+            matchScore = matchScore + calc;
+
+            if(perfectMatch.length == 0)
+            {
+               perfectMatch.push(tinders[x]);
+               latestScore = matchScore;
+            }
+            else
+            {
+                if(latestScore > matchScore) //this new tinder is a better match
+                {
+                    perfectMatch.pop(); //remove the last match to add this better one - this array has only 1 item always
+                    perfectMatch.push(tinders[x]);
+                    //console.log(tinders[x]);
+                    latestScore = matchScore;
+                }
+            }
+        }
+    }
+
+    //once you go through them all you know the best match
+    $("#matchImg").attr( 'src', perfectMatch[0].photo);
+    $('#matchName').text(perfectMatch[0].name);
 }
 
 // function generateRandom(maxVal)

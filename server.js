@@ -8,21 +8,13 @@ var PORT = process.env.PORT || 8080;
 
 app.use(express.static('public'));
 
-//usual routing etc
-app.get("/", function(req, res){
-    res.sendFile(path.join(__dirname + '/home.html'));
-    //res.send("Welcome to Friend Catcher!");
-})
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-//survey page
-app.get("/survey", function(req, res){
-    res.sendFile(path.join(__dirname , "/survey.html"));
-})
 
-//friends list
-app.get("/API/friends", function(req, res){
-    res.sendFile(path.join(__dirname , "/friends.html"));
-})
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
+
 
 app.listen(PORT, function(){
     // Log (server-side) when our server has started
